@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SMANITRA - Fisika 1 '90</title>
+
+  <!-- CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('./public/hero.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <div class="w-12 h-12 rounded-full bg-red-400 flex items-center justify-center mr-3">
+            <i class="fa-brands fa-soundcloud text-white text-xl"></i>
+          </div>
+          <div>
+            <h1 class="text-xl font-bold">SMANITRA - Fisika 1 '90</h1>
+            <p class="text-xs text-gray-500">“Kenangan lama, tawa yang tetap sama.”</p>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#home" class="hover:text-red-500 font-medium transition">Home</a>
+          <a href="#profile" class="hover:text-red-500 font-medium transition">About Us</a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="menu-toggle" class="md:hidden text-gray-800">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden flex-col mt-4 space-y-2">
+        <a href="#home" class="block py-2 px-4 hover:text-red-500">Home</a>
+        <a href="#profile" class="block py-2 px-4 hover:text-red-500">About Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero-bg min-h-[60vh] flex items-center text-white">
+    <div class="container mx-auto px-4 py-20">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">Selamat datang di</h1>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-red-600 mb-6">SMANITRA - Fisika 1 '90</h1>
+        <p class="text-base md:text-lg leading-relaxed">
+          Selamat datang di markas besar Alumni Fisika 1 SMANITRA ’90!<br>
+          Di sini, yang rambutnya dulu gondrong kini <span class="font-semibold">botak mengilap</span>,<br>
+          yang dulu suka nyontek sekarang malah jadi <span class="font-semibold">motivator parenting</span>,<br>
+          dulunya penghafal rumus sekarang jadi <span class="font-semibold">penghafal promo Indomaret</span>,<br>
+          dan yang katanya “nakal sedikit” kini <span class="font-semibold">rajin ikut pengajian</span>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile -->
+  <section id="profile" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Profile</h2>
+        <div class="w-20 h-1 bg-red-500 mx-auto"></div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2">
+          <img src="./public/hero3.jpg" class="rounded-lg shadow-lg w-full h-auto" alt="gbass" />
+        </div>
+
+        <div class="md:w-1/2 space-y-4 text-gray-600">
+          <h3 class="text-2xl font-semibold text-gray-800">SMANITRA - Fisika 1 '90</h3>
+          <p>Alumni Fisika 1 SMANITRA ’90 adalah kumpulan makhluk langka ...</p>
+          <p>Dulu kami mengira persamaan Gaya = Massa × Percepatan ...</p>
+          <p>Kini, tiga dekade lebih berlalu, kami tampil dalam wujud baru ...</p>
+          <p>Kami tetap percaya bahwa persahabatan sejati ...</p>
+
+          <p class="mt-4"><strong>Visi:</strong> Menjadi alumni yang tetap kompak ...</p>
+
+          <div>
+            <strong>Misi:</strong>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Mendukung teman-teman yang sekarang jadi CEO ...</li>
+              <li>Menghadirkan semangat Fisika 1 dalam setiap bidang ...</li>
+              <li>Menjadi penasihat karir ...</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="mb-6 md:mb-0">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center mr-3">
+              <i class="fa-brands fa-soundcloud"></i>
+            </div>
+            <h3 class="text-xl font-bold">SMANITRA - Fisika 1 '90</h3>
+          </div>
+          <p class="text-gray-400 max-w-xs">“Berubah bentuk, ga berubah hati...”</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Tautan Cepat</h4>
+            <ul class="space-y-2">
+              <li><a href="#home" class="text-gray-400 hover:text-red-400">Beranda</a></li>
+              <li><a href="#profile" class="text-gray-400 hover:text-red-400">Profil</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Sosial Media</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-red-500"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-red-500"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-red-500"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+        <p>&copy; 2025 Fis'90 Project</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    // Toggle Mobile Menu
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+
+</html>
