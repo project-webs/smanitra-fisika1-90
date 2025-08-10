@@ -1,768 +1,692 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>SMANITRA - Fisika 1 '90</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js"
-      defer
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+  <title>SMANITRA - Fisika 1 '90</title>
 
-    <!-- Styles -->
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+  <!-- CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-      body {
-        font-family: "Poppins", sans-serif;
-      }
+  <!-- Styles -->
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-      .hero-bg {
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)
-          ),
-          url("./public/hero.jpeg");
-        background-size: cover;
-        background-position: center;
-      }
+    body {
+      font-family: "Poppins", sans-serif;
+    }
 
-      .card-hover:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-    </style>
-  </head>
+    .hero-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)),
+        url("./public/hero.jpeg");
+      background-size: cover;
+      background-position: center;
+    }
 
-  <body class="bg-gray-50 text-gray-800">
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white shadow-sm">
-      <div class="container mx-auto px-4 py-3">
-        <div class="flex justify-between items-center">
-          <div class="flex items-center">
-            <div
-              class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center mr-3"
-            >
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center mr-3">
+            <i class="fa-regular fa-face-smile text-white text-xl"></i>
+          </div>
+          <div>
+            <h1 class="text-xl font-bold">SMANITRA - Fisika 1 '90</h1>
+            <p class="text-xs text-gray-500">
+              “Kenangan lama, tawa yang tetap sama.”
+            </p>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#home" class="hover:text-blue-500 font-medium transition">Home</a>
+          <a href="#profile" class="hover:text-blue-500 font-medium transition">About Us</a>
+          <a href="#galeri" class="hover:text-blue-500 font-medium transition">Galeri</a>
+          <!-- Dropdown Reuni -->
+          <div class="relative group">
+            <button class="hover:text-blue-500 font-medium transition">
+              Reuni
+            </button>
+            <!-- Submenu -->
+            <div class="absolute left-0 hidden group-hover:block bg-white shadow-lg mt-2 rounded">
+              <a href="#reuni-2025" class="block px-4 py-2 hover:bg-gray-100">Reuni 10 Agustus 2025</a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="menu-toggle" class="md:hidden text-gray-800">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden flex-col mt-4 space-y-2">
+        <a href="#home" class="block py-2 px-4 hover:text-blue-500">Home</a>
+        <a href="#profile" class="block py-2 px-4 hover:text-blue-500">About Us</a>
+        <a href="#galeri" class="block py-2 px-4 hover:text-blue-500">Galeri</a>
+        <!-- Mobile Reuni with Submenu -->
+        <div>
+          <a href="#" class="block py-2 px-4 font-medium hover:text-blue-500">Reuni</a>
+          <div class="pl-6">
+            <a href="#reuni-2025" class="block py-1 px-4 hover:text-blue-500">Reuni 10 Agustus 2025</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero-bg min-h-[60vh] flex items-center text-white">
+    <div class="container mx-auto px-4 py-20">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">Selamat datang di</h1>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-blue-600 mb-6">
+          SMANITRA - Fisika 1 '90
+        </h1>
+        <p class="text-base md:text-lg leading-relaxed">
+          Selamat datang di markas besar Alumni Fisika 1 SMANITRA ’90!<br />
+          Di sini, yang rambutnya dulu gondrong kini
+          <span class="font-semibold">botak mengkilap</span>,<br />
+          yang dulu suka nyontek sekarang malah jadi
+          <span class="font-semibold">motivator parenting</span>,<br />
+          dulunya penghafal rumus sekarang jadi
+          <span class="font-semibold">penghafal promo Indomaret</span>,<br />
+          dan yang katanya “nakal sedikit” kini
+          <span class="font-semibold">rajin ikut pengajian</span>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile -->
+  <section id="profile" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Profile</h2>
+        <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+      </div>
+
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2">
+          <img src="./public/hero3.jpeg" class="rounded-lg shadow-lg w-full h-auto" alt="gbass" />
+        </div>
+        <div class="md:w-1/2 space-y-4 text-gray-600">
+          <h3 class="text-2xl font-semibold text-gray-800">
+            SMANITRA - Fisika 1 '90
+          </h3>
+          <p>
+            Alumni Fisika 1 SMANITRA ’90 adalah kumpulan makhluk langka yang
+            dahulu dikenal sebagai spesialis menyembunyikan contekan rumus di
+            balik lengan baju, tukang tertawa saat hukum Newton dijelaskan
+            (padahal kaga paham), dan paling jago pura-pura serius saat Bu
+            Guru lewat.
+          </p>
+          <p>
+            Dulu kami mengira persamaan Gaya = Massa × Percepatan adalah menu
+            kantin — karena yang kami pacu hanyalah lari ke penjual es dan
+            gorengan sebelum istirahat habis.
+          </p>
+          <p>
+            Kini, tiga dekade lebih berlalu, kami tampil dalam wujud baru: ada
+            yang jadi direktur, dosen, notaris, guru favorit, emak sibuk,
+            sampai kolektor gelas NutriSari — tapi satu hal tak berubah:
+            semangat ribut kalau sudah kumpul.
+          </p>
+          <p>
+            Kami tetap percaya bahwa persahabatan sejati tidak lekang oleh
+            waktu, tetap renyah seperti gorengan kantin 90-an, dan selalu siap
+            tertawa pada kenangan masa putih-abu-abu penuh kisah konyol, haru,
+            dan ikatan hati yang tak pernah putus menuju tua bersama.
+          </p>
+
+          <p class="mt-4">
+            <strong>Visi:</strong> Mewujudkan ikatan alumni yang rukun, penuh
+            keberkahan, serta tetap mampu tertawa ringan di tengah naskah
+            kehidupan yang makin dramatis.
+          </p>
+
+          <div>
+            <strong>Misi:</strong>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>
+                Membuktikan bahwa tawa masa SMA adalah skincare alami yang
+                lebih ampuh dari serum mahal.
+              </li>
+              <li>
+                Menjadi wadah saling mendukung, baik dalam karier, ibadah,
+                maupun saat kalap belanja online tanggal kembar.
+              </li>
+              <li>
+                Menyebarkan semangat positif dan optimis, meskipun realita
+                mengingatkan bahwa jalan hidup tidak seindah filter Instagram.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri -->
+  <section id="galeri" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Galeri</h2>
+        <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Galeri Images -->
+        <!-- ulangi otomatis dari 1 sampai 40 -->
+        <!-- contoh manual: -->
+        <!-- prettier-ignore -->
+        <!-- row -->
+        <!-- generate 1..40 -->
+        <!-- prettier-ignore -->
+        <!-- Start Loop -->
+        <!-- prettier-ignore -->
+        <!-- prettier-ignore-start -->
+        <!-- prettier-ignore -->
+        <!-- prettier-ignore-end -->
+        <!-- prettier-ignore -->
+        <!-- we show 40 manually  -->
+
+        <!-- Generate images -->
+        <!-- prettier-ignore -->
+        <!-- prettier-ignore-start -->
+        <!-- prettier-ignore -->
+        <!-- You can simplify by copy-paste these lines til 40 -->
+
+        <!-- START GALLERY IMAGES -->
+        <!-- 1 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/1.jpeg" alt="galeri1" class="w-full h-full object-cover" />
+        </div>
+        <!-- 2 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/2.jpeg" alt="galeri2" class="w-full h-full object-cover" />
+        </div>
+        <!-- 3 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/3.jpeg" alt="galeri3" class="w-full h-full object-cover" />
+        </div>
+        <!-- 4 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/4.jpeg" alt="galeri4" class="w-full h-full object-cover" />
+        </div>
+        <!-- 5 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/5.jpeg" alt="galeri5" class="w-full h-full object-cover" />
+        </div>
+        <!-- 6 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/6.jpeg" alt="galeri6" class="w-full h-full object-cover" />
+        </div>
+        <!-- 7 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/7.jpeg" alt="galeri7" class="w-full h-full object-cover" />
+        </div>
+        <!-- 8 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/8.jpeg" alt="galeri8" class="w-full h-full object-cover" />
+        </div>
+        <!-- 9 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/9.jpeg" alt="galeri9" class="w-full h-full object-cover" />
+        </div>
+        <!-- 10 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/10.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/11.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/12.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/13.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/14.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/15.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/16.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/17.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/18.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/19.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/20.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/21.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/22.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/23.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/24.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/25.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/26.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/27.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/28.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/29.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/30.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/31.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/32.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/33.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/34.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/35.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/36.jpeg" alt="galeri10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/37.jpeg" alt="galeri37" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/38.jpeg" alt="galeri38" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/39.jpeg" alt="galeri39" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40.jpeg" alt="galeri40" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_1.jpeg" alt="galeri40_1" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_2.jpeg" alt="galeri40_2" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_3.jpeg" alt="galeri40_3" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_4.jpeg" alt="galeri40_4" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_5.jpeg" alt="galeri40_5" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_6.jpeg" alt="galeri40_6" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_7.jpeg" alt="galeri40_7" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_8.jpeg" alt="galeri40_8" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_9.jpeg" alt="galeri40_9" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_10.jpeg" alt="galeri40_10" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_11.jpeg" alt="galeri40_11" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_12.jpeg" alt="galeri40_12" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/40_13.jpeg" alt="galeri40_13" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/41.jpeg" alt="galeri41" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/42.jpeg" alt="galeri42" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/43.jpeg" alt="galeri43" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/44.jpeg" alt="galeri44" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/46.jpeg" alt="galeri44" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/galeri/100.jpeg" alt="galeri100" class="w-full h-full object-cover" />
+        </div>
+        <!-- ... copy hingga ke 40 ... -->
+
+        <!-- prettier-ignore-end -->
+        <!-- END GALLERY IMAGES -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== -->
+  <!-- Galeri -->
+  <section id="reuni-2025" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Reuni 10 Agustus 2025</h2>
+        <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Galeri Images -->
+        <!-- ulangi otomatis dari 1 sampai 40 -->
+        <!-- contoh manual: -->
+        <!-- prettier-ignore -->
+        <!-- row -->
+        <!-- generate 1..40 -->
+        <!-- prettier-ignore -->
+        <!-- Start Loop -->
+        <!-- prettier-ignore -->
+        <!-- prettier-ignore-start -->
+        <!-- prettier-ignore -->
+        <!-- prettier-ignore-end -->
+        <!-- prettier-ignore -->
+        <!-- we show 40 manually  -->
+
+        <!-- Generate images -->
+        <!-- prettier-ignore -->
+        <!-- prettier-ignore-start -->
+        <!-- prettier-ignore -->
+        <!-- You can simplify by copy-paste these lines til 40 -->
+
+        <!-- START GALLERY IMAGES -->
+        <!-- 1 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <video class="w-full h-full object-cover" controls>
+            <source src="./public/reuni_2025/rv1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <video class="w-full h-full object-cover" controls>
+            <source src="./public/reuni_2025/rv2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <video class="w-full h-full object-cover" controls>
+            <source src="./public/reuni_2025/rv3.mp4" type="video/mp4">
+          </video>
+        </div>
+
+
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r1.jpeg" alt="reuni_20251" class="w-full h-full object-cover" />
+        </div>
+        <!-- 2 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r2.jpeg" alt="reuni_20252" class="w-full h-full object-cover" />
+        </div>
+        <!-- 3 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r3.jpeg" alt="reuni_20253" class="w-full h-full object-cover" />
+        </div>
+        <!-- 4 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r4.jpeg" alt="reuni_20254" class="w-full h-full object-cover" />
+        </div>
+        <!-- 5 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r5.jpeg" alt="reuni_20255" class="w-full h-full object-cover" />
+        </div>
+        <!-- 6 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r6.jpeg" alt="reuni_20256" class="w-full h-full object-cover" />
+        </div>
+        <!-- 7 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r7.jpeg" alt="reuni_20257" class="w-full h-full object-cover" />
+        </div>
+        <!-- 8 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r8.jpeg" alt="reuni_20258" class="w-full h-full object-cover" />
+        </div>
+        <!-- 9 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r9.jpeg" alt="reuni_20259" class="w-full h-full object-cover" />
+        </div>
+        <!-- 10 -->
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r10.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r11.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r12.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r13.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r14.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r15.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r16.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r17.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r18.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r19.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r20.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r21.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r22.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r23.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r24.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r25.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r26.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r27.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r28.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r29.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r30.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r31.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r32.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r33.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r34.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r35.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r36.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r37.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r38.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+        <div class="overflow-hidden rounded-lg shadow-sm">
+          <img src="./public/reuni_2025/r39.jpeg" alt="reuni_202510" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- ... copy hingga ke 40 ... -->
+
+        <!-- prettier-ignore-end -->
+        <!-- END GALLERY IMAGES -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== -->
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="mb-6 md:mb-0">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center mr-3">
               <i class="fa-regular fa-face-smile text-white text-xl"></i>
             </div>
-            <div>
-              <h1 class="text-xl font-bold">SMANITRA - Fisika 1 '90</h1>
-              <p class="text-xs text-gray-500">
-                “Kenangan lama, tawa yang tetap sama.”
-              </p>
-            </div>
+            <h3 class="text-xl font-bold">SMANITRA - Fisika 1 '90</h3>
           </div>
-
-          <!-- Navigation -->
-          <nav class="hidden md:flex space-x-8">
-            <a href="#home" class="hover:text-blue-500 font-medium transition"
-              >Home</a
-            >
-            <a
-              href="#profile"
-              class="hover:text-blue-500 font-medium transition"
-              >About Us</a
-            >
-            <a href="#galeri" class="hover:text-blue-500 font-medium transition"
-              >Galeri</a
-            >
-          </nav>
-
-          <!-- Mobile menu button -->
-          <button id="menu-toggle" class="md:hidden text-gray-800">
-            <i class="fas fa-bars text-xl"></i>
-          </button>
-        </div>
-
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden flex-col mt-4 space-y-2">
-          <a href="#home" class="block py-2 px-4 hover:text-blue-500">Home</a>
-          <a href="#profile" class="block py-2 px-4 hover:text-blue-500"
-            >About Us</a
-          >
-          <a href="#galeri" class="block py-2 px-4 hover:text-blue-500"
-            >Galeri</a
-          >
-        </div>
-      </div>
-    </header>
-
-    <!-- Hero -->
-    <section
-      id="home"
-      class="hero-bg min-h-[60vh] flex items-center text-white"
-    >
-      <div class="container mx-auto px-4 py-20">
-        <div class="max-w-2xl">
-          <h1 class="text-4xl md:text-5xl font-bold mb-2">Selamat datang di</h1>
-          <h1 class="text-4xl md:text-6xl font-extrabold text-blue-600 mb-6">
-            SMANITRA - Fisika 1 '90
-          </h1>
-          <p class="text-base md:text-lg leading-relaxed">
-            Selamat datang di markas besar Alumni Fisika 1 SMANITRA ’90!<br />
-            Di sini, yang rambutnya dulu gondrong kini
-            <span class="font-semibold">botak mengkilap</span>,<br />
-            yang dulu suka nyontek sekarang malah jadi
-            <span class="font-semibold">motivator parenting</span>,<br />
-            dulunya penghafal rumus sekarang jadi
-            <span class="font-semibold">penghafal promo Indomaret</span>,<br />
-            dan yang katanya “nakal sedikit” kini
-            <span class="font-semibold">rajin ikut pengajian</span>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Profile -->
-    <section id="profile" class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4">Profile</h2>
-          <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
-        </div>
-
-        <div class="flex flex-col md:flex-row items-center gap-8">
-          <div class="md:w-1/2">
-            <img
-              src="./public/hero3.jpeg"
-              class="rounded-lg shadow-lg w-full h-auto"
-              alt="gbass"
-            />
-          </div>
-          <div class="md:w-1/2 space-y-4 text-gray-600">
-            <h3 class="text-2xl font-semibold text-gray-800">
-              SMANITRA - Fisika 1 '90
-            </h3>
-            <p>
-              Alumni Fisika 1 SMANITRA ’90 adalah kumpulan makhluk langka yang
-              dahulu dikenal sebagai spesialis menyembunyikan contekan rumus di
-              balik lengan baju, tukang tertawa saat hukum Newton dijelaskan
-              (padahal kaga paham), dan paling jago pura-pura serius saat Bu
-              Guru lewat.
-            </p>
-            <p>
-              Dulu kami mengira persamaan Gaya = Massa × Percepatan adalah menu
-              kantin — karena yang kami pacu hanyalah lari ke penjual es dan
-              gorengan sebelum istirahat habis.
-            </p>
-            <p>
-              Kini, tiga dekade lebih berlalu, kami tampil dalam wujud baru: ada
-              yang jadi direktur, dosen, notaris, guru favorit, emak sibuk,
-              sampai kolektor gelas NutriSari — tapi satu hal tak berubah:
-              semangat ribut kalau sudah kumpul.
-            </p>
-            <p>
-              Kami tetap percaya bahwa persahabatan sejati tidak lekang oleh
-              waktu, tetap renyah seperti gorengan kantin 90-an, dan selalu siap
-              tertawa pada kenangan masa putih-abu-abu penuh kisah konyol, haru,
-              dan ikatan hati yang tak pernah putus menuju tua bersama.
-            </p>
-
-            <p class="mt-4">
-              <strong>Visi:</strong> Mewujudkan ikatan alumni yang rukun, penuh
-              keberkahan, serta tetap mampu tertawa ringan di tengah naskah
-              kehidupan yang makin dramatis.
-            </p>
-
-            <div>
-              <strong>Misi:</strong>
-              <ul class="list-disc pl-5 space-y-2">
-                <li>
-                  Membuktikan bahwa tawa masa SMA adalah skincare alami yang
-                  lebih ampuh dari serum mahal.
-                </li>
-                <li>
-                  Menjadi wadah saling mendukung, baik dalam karier, ibadah,
-                  maupun saat kalap belanja online tanggal kembar.
-                </li>
-                <li>
-                  Menyebarkan semangat positif dan optimis, meskipun realita
-                  mengingatkan bahwa jalan hidup tidak seindah filter Instagram.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Galeri -->
-    <section id="galeri" class="py-16 bg-gray-100">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4">Galeri</h2>
-          <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <!-- Galeri Images -->
-          <!-- ulangi otomatis dari 1 sampai 40 -->
-          <!-- contoh manual: -->
-          <!-- prettier-ignore -->
-          <!-- row -->
-          <!-- generate 1..40 -->
-          <!-- prettier-ignore -->
-          <!-- Start Loop -->
-          <!-- prettier-ignore -->
-          <!-- prettier-ignore-start -->
-          <!-- prettier-ignore -->
-          <!-- prettier-ignore-end -->
-          <!-- prettier-ignore -->
-          <!-- we show 40 manually  -->
-
-          <!-- Generate images -->
-          <!-- prettier-ignore -->
-          <!-- prettier-ignore-start -->
-          <!-- prettier-ignore -->
-          <!-- You can simplify by copy-paste these lines til 40 -->
-
-          <!-- START GALLERY IMAGES -->
-          <!-- 1 -->
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/1.jpeg"
-              alt="galeri1"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- 2 -->
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/2.jpeg"
-              alt="galeri2"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- 3 -->
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/3.jpeg"
-              alt="galeri3"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- 4 -->
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/4.jpeg"
-              alt="galeri4"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- 5 -->
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/5.jpeg"
-              alt="galeri5"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- 6 -->
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/6.jpeg"
-              alt="galeri6"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- 7 -->
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/7.jpeg"
-              alt="galeri7"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- 8 -->
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/8.jpeg"
-              alt="galeri8"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- 9 -->
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/9.jpeg"
-              alt="galeri9"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- 10 -->
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/10.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/11.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/12.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/13.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/14.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/15.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/16.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/17.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/18.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/19.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/20.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/21.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/22.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/23.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/24.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/25.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/26.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/27.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/28.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/29.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/30.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/31.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/32.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/33.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/34.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/35.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/36.jpeg"
-              alt="galeri10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/37.jpeg"
-              alt="galeri37"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/38.jpeg"
-              alt="galeri38"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/39.jpeg"
-              alt="galeri39"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40.jpeg"
-              alt="galeri40"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_1.jpeg"
-              alt="galeri40_1"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_2.jpeg"
-              alt="galeri40_2"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_3.jpeg"
-              alt="galeri40_3"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_4.jpeg"
-              alt="galeri40_4"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_5.jpeg"
-              alt="galeri40_5"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_6.jpeg"
-              alt="galeri40_6"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_7.jpeg"
-              alt="galeri40_7"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_8.jpeg"
-              alt="galeri40_8"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_9.jpeg"
-              alt="galeri40_9"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_10.jpeg"
-              alt="galeri40_10"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_11.jpeg"
-              alt="galeri40_11"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_12.jpeg"
-              alt="galeri40_12"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/40_13.jpeg"
-              alt="galeri40_13"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/41.jpeg"
-              alt="galeri41"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/42.jpeg"
-              alt="galeri42"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/43.jpeg"
-              alt="galeri43"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/44.jpeg"
-              alt="galeri44"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/46.jpeg"
-              alt="galeri44"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div class="overflow-hidden rounded-lg shadow-sm">
-            <img
-              src="./public/galeri/100.jpeg"
-              alt="galeri100"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <!-- ... copy hingga ke 40 ... -->
-
-          <!-- prettier-ignore-end -->
-          <!-- END GALLERY IMAGES -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between">
-          <div class="mb-6 md:mb-0">
-            <div class="flex items-center mb-4">
-              <div
-                class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center mr-3"
-              >
-                <i class="fa-regular fa-face-smile text-white text-xl"></i>
-              </div>
-              <h3 class="text-xl font-bold">SMANITRA - Fisika 1 '90</h3>
-            </div>
-            <p class="text-gray-400 max-w-xs">
-              “Berubah bentuk, ga berubah hati...”
-            </p>
-          </div>
-
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-            <div>
-              <h4 class="text-lg font-semibold mb-4">Tautan Cepat</h4>
-              <ul class="space-y-2">
-                <li>
-                  <a href="#home" class="text-gray-400 hover:text-blue-400"
-                    >Beranda</a
-                  >
-                </li>
-                <li>
-                  <a href="#profile" class="text-gray-400 hover:text-blue-400"
-                    >Profil</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 class="text-lg font-semibold mb-4">Sosial Media</h4>
-              <div class="flex space-x-4">
-                <a
-                  href="https://www.facebook.com/groups/100219800031824/?ref=share&mibextid=KtfwRi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-500"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-
-                <a
-                  href="#"
-                  class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-500"
-                >
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a
-                  href="#"
-                  class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-500"
-                >
-                  <i class="fab fa-youtube"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tribute Section -->
-        <div class="mt-8 text-center">
-          <p class="text-sm text-blue-300 italic">
-            Al-Fatihah buat saudara kami tercinta
-            <strong>'Pujanggoro Anom'</strong>.<br />
-            Semoga Allah lapangkan kuburnya, berikan cahaya terang di dalamnya,
-            dan tempatkan beliau di dalam syurga-Nya.
+          <p class="text-gray-400 max-w-xs">
+            “Berubah bentuk, ga berubah hati...”
           </p>
         </div>
 
-        <div
-          class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400"
-        >
-          <p>&copy; 2025 Fis1 '90 Project</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Tautan Cepat</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#home" class="text-gray-400 hover:text-blue-400">Beranda</a>
+              </li>
+              <li>
+                <a href="#profile" class="text-gray-400 hover:text-blue-400">Profil</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Sosial Media</h4>
+            <div class="flex space-x-4">
+              <a href="https://www.facebook.com/groups/100219800031824/?ref=share&mibextid=KtfwRi" target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-500">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-500">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-500">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
 
-    <!-- Script -->
-    <script>
-      // Toggle Mobile Menu
-      const toggleBtn = document.getElementById("menu-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
+      <!-- Tribute Section -->
+      <div class="mt-8 text-center">
+        <p class="text-sm text-blue-300 italic">
+          Al-Fatihah buat saudara kami tercinta
+          <strong>'Pujanggoro Anom'</strong>.<br />
+          Semoga Allah lapangkan kuburnya, berikan cahaya terang di dalamnya,
+          dan tempatkan beliau di dalam syurga-Nya.
+        </p>
+      </div>
 
-      toggleBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+        <p>&copy; 2025 Fis1 '90 Project</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    // Toggle Mobile Menu
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggleBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () =>
+        mobileMenu.classList.add("hidden")
+      );
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document
+          .querySelector(this.getAttribute("href"))
+          .scrollIntoView({ behavior: "smooth" });
       });
+    });
+  </script>
+</body>
 
-      mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () =>
-          mobileMenu.classList.add("hidden")
-        );
-      });
-
-      // Smooth scroll
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document
-            .querySelector(this.getAttribute("href"))
-            .scrollIntoView({ behavior: "smooth" });
-        });
-      });
-    </script>
-  </body>
 </html>
